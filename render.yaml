@@ -1,0 +1,50 @@
+# Render.com Blueprint Configuration
+# Deploy to: advancedentalclinic.me
+
+services:
+  - type: web
+    name: taxi-management
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: APP_URL
+        value: https://advancedentalclinic.me
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: MAIL_SERVER
+        sync: false
+      - key: MAIL_PORT
+        sync: false
+      - key: MAIL_USERNAME
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+      - key: FROM_MAIL
+        sync: false
+      - key: USE_TLS
+        sync: false
+      - key: META_ACCESS_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: SAP_USERNAME
+        sync: false
+      - key: SAP_PASSWORD
+        sync: false
+      - key: SAP_BASE_URL
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true

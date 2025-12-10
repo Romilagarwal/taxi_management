@@ -20,6 +20,9 @@ from requests.auth import HTTPBasicAuth
 
 load_dotenv()
 
+# Application URL Configuration (for email links)
+APP_URL = os.environ.get('APP_URL', 'https://advancedentalclinic.me')
+
 # WhatsApp API Configuration
 WHATSAPP_API_URL = os.environ.get('WHATSAPP_API_URL', 'https://graph.facebook.com/v17.0/')
 META_ACCESS_TOKEN = os.environ.get('META_ACCESS_TOKEN', '')
@@ -2142,7 +2145,7 @@ def send_own_vehicle_confirmation_email(user, reference_id):
                     <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
                         <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
                         <p style="margin: 10px 0;">Click the link below to view your request status and manage your taxi requests:</p>
-                        <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+                        <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                             <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
                         </a>
                     </div>
@@ -2251,7 +2254,7 @@ def send_feedback_reminder_email(user, request_id, travel_date, from_location, t
                     <div class="feedback-box">
                         <h4 style="color: #155724; margin-top: 0;"><i class="fas fa-comment-alt"></i> Please Share Your Experience</h4>
                         <p style="margin: 10px 0;">Your feedback is valuable to us. Please take a moment to rate your experience and share any comments.</p>
-                        <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+                        <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                             <i class="fas fa-star" style="margin-right: 8px;"></i>Submit Feedback
                         </a>
                     </div>
@@ -2259,7 +2262,7 @@ def send_feedback_reminder_email(user, request_id, travel_date, from_location, t
                     <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
                         <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
                         <p style="margin: 10px 0;">Click the link below to view your request status and submit feedback:</p>
-                        <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+                        <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                             <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
                         </a>
                     </div>
@@ -4152,7 +4155,7 @@ def submit_request():
         <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #856404; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0; color: #856404;">Click the link below to review and approve taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #ffc107, #e0a800); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #ffc107, #e0a800); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-user-tie" style="margin-right: 8px;"></i>Go to HOD Dashboard
             </a>
         </div>
@@ -4322,7 +4325,7 @@ def submit_request():
         <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0;">Click the link below to review and manage taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
             </a>
         </div>
@@ -4429,7 +4432,7 @@ def submit_request():
         <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0;">Click the link below to review and manage taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
             </a>
         </div>
@@ -5217,7 +5220,7 @@ def hod_response(request_id):
         <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0;">Click the link below to view your request status and manage your taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
             </a>
         </div>
@@ -5411,7 +5414,7 @@ Thank You"""
         <div style="background: #d1ecf1; border: 2px solid #17a2b8; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #0c5460; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0; color: #0c5460;">Click the link below to review and manage taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #17a2b8, #138496); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #17a2b8, #138496); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-user-shield" style="margin-right: 8px;"></i>Go to Admin Dashboard
             </a>
         </div>
@@ -5589,7 +5592,7 @@ Thank You"""
         <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0;">Click the link below to view your request status and manage your taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
             </a>
         </div>
@@ -5875,7 +5878,7 @@ def admin_response(request_id):
         <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
             <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
             <p style="margin: 10px 0;">Click the link below to review and manage taxi requests:</p>
-            <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+            <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                 <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
             </a>
         </div>
@@ -6298,7 +6301,7 @@ def edit_request(request_id):
                             <div style="background: #e7f3ff; border: 2px solid #007bff; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
                                 <h4 style="color: #007bff; margin-top: 0;"><i class="fas fa-tachometer-alt"></i> Access Your Dashboard</h4>
                                 <p style="margin: 10px 0;">Click the link below to review and manage taxi requests:</p>
-                                <a href="http://172.19.66.141:9060/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
+                                <a href="{APP_URL}/" style="display: inline-block; background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 0;">
                                     <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Go to User Dashboard
                                 </a>
                             </div>
@@ -6721,18 +6724,36 @@ def admin_own_vehicle():
                              'date_range': date_range_filter
                          })
 
-if __name__ == '__main__':
-    print("🚀 Starting Taxi Management System...")
+# =============================================================================
+# HEALTH CHECK ENDPOINT (for Render deployment)
+# =============================================================================
+@app.route('/health')
+def health_check():
+    """Health check endpoint for Render deployment"""
+    try:
+        # Test database connection
+        conn = db_pool.getconn()
+        c = conn.cursor()
+        c.execute('SELECT 1')
+        c.close()
+        db_pool.putconn(conn)
+        return jsonify({
+            'status': 'healthy',
+            'database': 'connected',
+            'timestamp': datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }), 500
 
-    # Test database connection first
-    if not test_db_connection():
-        print("❌ Cannot start application - database connection failed")
-        exit(1)
-
-    # Initialize database
-    init_db()
-
-    # Initialize scheduler for automatic reminders
+# =============================================================================
+# APPLICATION STARTUP
+# =============================================================================
+def start_scheduler():
+    """Start the background scheduler for reminders"""
     scheduler = BackgroundScheduler()
     scheduler.add_job(
         func=check_and_send_overdue_reminders,
@@ -6743,6 +6764,30 @@ if __name__ == '__main__':
     )
     scheduler.start()
     print("✅ Scheduler started - overdue reminders will run every 30 minutes")
+    return scheduler
+
+# Initialize database and scheduler on module load (for gunicorn)
+print("🚀 Initializing Taxi Management System...")
+if test_db_connection():
+    init_db()
+    start_scheduler()
+else:
+    print("⚠️ Database connection failed - will retry on first request")
+
+if __name__ == '__main__':
+    print("🚀 Starting Taxi Management System (Development Mode)...")
+
+    # Test database connection first
+    if not test_db_connection():
+        print("❌ Cannot start application - database connection failed")
+        exit(1)
+
+    # Initialize database
+    init_db()
+
+    # Start scheduler
+    start_scheduler()
 
     print("✅ Starting Flask application...")
-    app.run(debug=False, port=9060)
+    port = int(os.environ.get('PORT', 9060))
+    app.run(debug=False, host='0.0.0.0', port=port)

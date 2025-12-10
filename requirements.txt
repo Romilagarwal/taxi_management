@@ -6,3 +6,4 @@ twilio==8.8.0
 APScheduler==3.10.4
 requests==2.31.0
 Werkzeug==2.3.7
+gunicorn==21.2.0
